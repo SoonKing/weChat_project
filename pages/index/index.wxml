@@ -1,0 +1,15 @@
+<!--pages/index/index.wxml-->
+<swiper class='slides' autoplay='true' indicator-dots="true" interval="1000" duration="500" circular="true">
+<!--轮播图  -->
+  <swiper-item wx:for="{{slides}}" wx:key="{{id}}">
+    <image src="{{item.image}}"></image>
+  </swiper-item>
+</swiper>
+<!--九宫格  -->
+<view class="grids">
+<!--               跳转的时候,这里要传递参数,不然子页面没有数据  -->
+	<navigator url="/pages/list/list?cat={{item.id}}" class="items" wx:for="{{categories}}" wx:key="{{ id }}">
+		<image src="{{item.icon}}"/>
+		<text>{{item.name}}</text>
+	</navigator>
+</view>
